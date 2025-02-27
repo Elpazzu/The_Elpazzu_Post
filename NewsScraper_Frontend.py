@@ -4,14 +4,12 @@ import os
 
 app = FastAPI()
 
-API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
-
 CATEGORIES = {
-    "biopharma": f"{API_BASE_URL}/news/biopharma",
-    "ai": f"{API_BASE_URL}/news/ai",
-    "investments": f"{API_BASE_URL}/news/investments",
-    "world": f"{API_BASE_URL}/news/world",
-    "lebanon": f"{API_BASE_URL}/news/lebanon"
+    "biopharma": f"https://The_Elpazzu_Post_Backend.render.com/news/biopharma",
+    "ai": f"https://The_Elpazzu_Post_Backend.render.com/news/ai",
+    "investments": f"https://The_Elpazzu_Post_Backend.render.com/news/investments",
+    "world": f"https://The_Elpazzu_Post_Backend.render.com/news/world",
+    "lebanon": f"https://The_Elpazzu_Post_Backend.render.com/news/lebanon"
 }
 
 @app.get("/", response_class=HTMLResponse)
