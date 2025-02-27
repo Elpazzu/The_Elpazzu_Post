@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-import os
 
 app = FastAPI()
 
