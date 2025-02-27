@@ -1,17 +1,17 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-import socket
+import os
 
 app = FastAPI()
 
-local_ip = socket.gethostbyname(socket.gethostname())
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
 
 CATEGORIES = {
-    "biopharma": f"http://{local_ip}:8000/news/biopharma",
-    "ai": f"http://{local_ip}:8000/news/ai",
-    "investments": f"http://{local_ip}:8000/news/investments",
-    "world": f"http://{local_ip}:8000/news/world",
-    "lebanon": f"http://{local_ip}:8000/news/lebanon"
+    "biopharma": f"{API_BASE_URL}/news/biopharma",
+    "ai": f"{API_BASE_URL}/news/ai",
+    "investments": f"{API_BASE_URL}/news/investments",
+    "world": f"{API_BASE_URL}/news/world",
+    "lebanon": f"{API_BASE_URL}/news/lebanon"
 }
 
 @app.get("/", response_class=HTMLResponse)
