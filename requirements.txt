@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+feedparser
+beautifulsoup4
+newspaper3k
+requests
