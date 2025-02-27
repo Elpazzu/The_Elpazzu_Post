@@ -6,6 +6,8 @@ from newspaper import Article
 import re
 import warnings
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+import os
 
 warnings.filterwarnings("ignore")
 
@@ -159,3 +161,7 @@ def home():
 def get_news(category: str, max_articles: int = 5):
     articles = fetch_news(category, max_articles)
     return {"category": category, "articles": articles}
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
