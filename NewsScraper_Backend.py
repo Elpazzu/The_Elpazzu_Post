@@ -62,7 +62,6 @@ RSS_FEEDS = {
             "http://www.aljazeera.com/xml/rss/all.xml": "Global headlines from Al Jazeera.",
             "https://www.france24.com/en/rss": "Global headlines from France 24.",
             "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml": "Global headlines from NY Times.",
-            "http://www.smh.com.au/rssheadlines/world/article/rss.xml": "Global headlines from Sydney Morning Herald (SMH).",
             "https://www.ft.com/world?format=rss": "News, analysis, and comment from the Financial Times (business publication).",
             "https://www.euronews.com/rss?format=mrss&level=theme&name=news": "Global headlines from Euronews.",
             "https://www.euronews.com/rss?format=mrss&level=vertical&name=my-europe": "European headlines from Euronews."
