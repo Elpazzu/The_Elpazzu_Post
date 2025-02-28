@@ -4,11 +4,11 @@ from fastapi.responses import HTMLResponse
 app = FastAPI()
 
 CATEGORIES = {
-    "biopharma": f"https://The_Elpazzu_Post_Backend.render.com/news/biopharma",
-    "ai": f"https://The_Elpazzu_Post_Backend.render.com/news/ai",
-    "investments": f"https://The_Elpazzu_Post_Backend.render.com/news/investments",
-    "world": f"https://The_Elpazzu_Post_Backend.render.com/news/world",
-    "lebanon": f"https://The_Elpazzu_Post_Backend.render.com/news/lebanon"
+    "pharma": f"https://the-elpazzu-post-backend.onrender.com/news/biopharma",
+    "ai": f"https://the-elpazzu-post-backend.onrender.com/news/ai",
+    "invest": f"https://the-elpazzu-post-backend.onrender.com/news/investments",
+    "world": f"https://the-elpazzu-post-backend.onrender.com/news/world",
+    "lebanon": f"https://the-elpazzu-post-backend.onrender.com/news/lebanon"
 }
 
 @app.get("/", response_class=HTMLResponse)
