@@ -25,7 +25,6 @@ RSS_FEEDS = {
             "https://www.fiercepharma.com/rss.xml": "Breaking news and insights from the pharma industry.",
             "https://www.cafepharma.com/rss.xml": "Industry gossip and insider news.",
             "https://www.pharmatimes.com/rss/news_rss.rss": "Industry trends, regulatory updates & patient perspectives.",
-            "https://www.pharmexec.com/rss": "Business strategies, innovations & leadership shaping the pharma industry.",
             "https://www.bioworld.com/rss/14": "Deals/M&As in Biotech & MedTech.",
             "https://www.bioworld.com/rss/22": "Digital health in Biotech & MedTech.",
             "https://www.bioworld.com/rss/5": "Artificial Intelligence in BioTech & MedTech."
