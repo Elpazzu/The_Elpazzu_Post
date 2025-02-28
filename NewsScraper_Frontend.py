@@ -59,7 +59,7 @@ def serve_react():
                 let readArticles = getReadArticles();
                 if (readArticles.includes(articleId)) {{
                     readArticles = readArticles.filter(id => id !== articleId);
-                    button.textContent = "✔ Mark as Read";
+                    button.textContent = "Mark as Read";
                 }} else {{
                     readArticles.push(articleId);
                     button.textContent = "✅ Done";
@@ -102,7 +102,7 @@ def serve_react():
                                 <p class="published-date">📅 ${{article.published}}</p>
                                 <p class="summary">${{article.summary}}</p>
                                 <button class="mark-read" onclick="toggleRead('${{articleId}}', this)">
-                                    ${{ isRead ? '✅ Done' : '✔ Mark as Read' }}
+                                    ${{ isRead ? '✅ Done' : 'Mark as Read' }}
                                 </button>
                             </div>`;
                     }}).join("");
