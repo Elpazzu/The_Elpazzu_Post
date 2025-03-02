@@ -6,8 +6,10 @@ from newspaper import Article
 import re
 import warnings
 from fastapi.middleware.cors import CORSMiddleware
+from googletrans import Translator
 
 warnings.filterwarnings("ignore")
+translator = Translator()
 
 app = FastAPI()
 
@@ -79,6 +81,12 @@ RSS_FEEDS = {
     }
 }
 
+def detect_and_translate(text, target_lang="en"):
+    detected_lang = translator.detect(text).lang
+    if detected_lang == "ar":
+        return translator.translate(text, dest=target_lang).text
+    return text
+    
 def fetch_news(category: str, max_articles: int = 5):
     if category not in RSS_FEEDS:
         raise HTTPException(status_code=404, detail=f"Category '{category}' not found.")
@@ -108,11 +116,14 @@ def fetch_news(category: str, max_articles: int = 5):
             
             if not summary or len(summary) < 40:
                 continue
+
+            translated_title = detect_and_translate(title)
+            translated_summary = detect_and_translate(summary)
             
             articles.append({
-                "title": title,
+                "title": translated_title,
                 "link": link,
-                "summary": summary[:1100] + "..." if len(summary) > 1100 else summary,
+                "summary": translated_summary[:1100] + "..." if len(translated_summary) > 1100 else translated_summary,
                 "published": published,
                 "feed_description": feed_desc,
                 "domain": domain
