@@ -5,4 +5,4 @@ beautifulsoup4
 newspaper3k
 requests
 lxml_html_clean
-googletrans
+googletrans==4.0.0-rc1
