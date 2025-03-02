@@ -38,11 +38,22 @@ def serve_react():
             .summary {{ font-size: 14px; color: #E0E0E0; }}
             .mark-read {{ position: absolute; top: 10px; right: 10px; cursor: pointer; background: #BB86FC; color: white; border: none; padding: 5px 10px; border-radius: 5px; 
                           font-size: 12px; white-space: nowrap; }}
+            .notice-box {{ position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #BB86FC; color: white; padding: 15px; border-radius: 8px;
+                           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); text-align: center; max-width: 600px; z-index: 1000; }}
+            .notice-box button {{ margin-top: 10px; background: #1E1E1E; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px; }}
+            .notice-box button:hover {{ background: #121212; }}
         </style>
     </head>
     <body>
         <div class="container">
             <h1>📰 The Elpazzu Post</h1>
+            <div id="notice-box" class="notice-box">
+                <p>
+                    This is a personalized journal that is not meant for wide use. 
+                    If you are not Elpazzu himself, you've got no business here.
+                </p>
+                <button onclick="closeNotice()">Got it</button>
+            </div>
             <div class="menu" id="menu-bar"></div>
             <div id="news-container">Loading news...</div>
         </div>
@@ -59,7 +70,7 @@ def serve_react():
                 let readArticles = getReadArticles();
                 if (readArticles.includes(articleId)) {{
                     readArticles = readArticles.filter(id => id !== articleId);
-                    button.textContent = "Mark as Read";
+                    button.textContent = "Mark Done";
                 }} else {{
                     readArticles.push(articleId);
                     button.textContent = "✅ Done";
@@ -84,7 +95,7 @@ def serve_react():
                 let container = document.getElementById("news-container");
                 container.innerHTML = "<p>Loading news...</p>";
                 let apiUrl = CATEGORIES[category];
-                let readArticles = await getReadArticles(); // Await the result from getReadArticles()
+                let readArticles = await getReadArticles();
                 readArticles = readArticles || [];
 
                 try {{
@@ -98,11 +109,11 @@ def serve_react():
                         return `
                             <div id="${{articleId}}" class="article-card ${{isRead ? 'read' : ''}}">
                                 <h2><a href="${{article.link}}" target="_blank">${{article.title}}</a></h2>
-                                <p class="domain">🌐 ${{article.domain}}</p> <!-- Show domain here -->
+                                <p class="domain">🌐 ${{article.domain}}</p>
                                 <p class="published-date">📅 ${{article.published}}</p>
                                 <p class="summary">${{article.summary}}</p>
                                 <button class="mark-read" onclick="toggleRead('${{articleId}}', this)">
-                                    ${{ isRead ? '✅ Done' : 'Mark as Read' }}
+                                    ${{ isRead ? '✅ Done' : 'Mark Done' }}
                                 </button>
                             </div>`;
                     }}).join("");
@@ -112,6 +123,17 @@ def serve_react():
                 }}
             }}
 
+            function closeNotice() {{
+                document.getElementById("notice-box").style.display = "none";
+                localStorage.setItem("noticeDismissed", "true");
+            }}
+
+            window.onload = function () {{
+                if (localStorage.getItem("noticeDismissed") === "true") {{
+                    document.getElementById("notice-box").style.display = "none";
+                }}
+            }};
+            
             loadMenu();
             loadNews(currentCategory);
         </script>
