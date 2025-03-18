@@ -47,7 +47,6 @@ RSS_FEEDS = {
             "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114": "Latest financial market updates from CNBC.",
             "https://www.biggerpockets.com/blog/feed": "Go-to resource for real estate investors.",
             "https://blogs.cfainstitute.org/investor/feed/": "Insightful & practical analysis for investment professionals.",
-            "https://www.betterment.com/resources/rss.xml": "Helps individuals achieve financial peace of mind.",
             "https://www.investmentwatchblog.com/feed/": "Analysis & insights on financial markets, politics, and global events.",
             "https://www.ft.com/global-economy?format=rss": "Coverage of global economic issues.",
             "https://www.ft.com/companies?format=rss": "Latest company news and updates.",
@@ -69,11 +68,8 @@ RSS_FEEDS = {
     },
     "lebanon": {
         "feeds": {
-            "https://www.the961.com/feed/": "News and stories from Lebanon covering politics, culture, and more.",
             "https://libnanews.com/feed/": "Political, economic, judicial, cultural & social news from Lebanon",
-            "https://www.ft.com/world/mideast?format=rss": "FT news specific to MENA region.",
-            "https://www.tayyar.org/Rss/Category/1": "Lebanon news from FRPM journal.",
-            "https://www.aljadeed.tv/Rss/NewsHighlights": "Independent Lebanese journal."
+            "https://www.ft.com/world/mideast?format=rss": "FT news specific to MENA region."
         },
         "description": "News and updates from Lebanon."
     }
