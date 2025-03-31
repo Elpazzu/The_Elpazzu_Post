@@ -79,6 +79,7 @@ def fetch_news(category: str, max_articles: int = 5):
         raise HTTPException(status_code=404, detail=f"Category '{category}' not found.")
     
     month_pattern = re.compile(r"^(January|February|March|April|May|June|July|August|September|October|November|December)\b", re.IGNORECASE)
+    ignore_pattern = re.compile(r"^(Latest news bulletin|Revue de presse du)|Interview Series$", re.IGNORECASE)
     
     articles = []
     for url, feed_desc in RSS_FEEDS[category]["feeds"].items():
@@ -92,7 +93,9 @@ def fetch_news(category: str, max_articles: int = 5):
             title = entry.title
             link = entry.link
             domain = urlparse(link).netloc
-            
+
+            if ignore_pattern.match(title):
+                continue
             if category == "biopharma" and "/webinar/" in link:
                 continue
             if "cafepharma.com" in url and not month_pattern.match(entry.title):
