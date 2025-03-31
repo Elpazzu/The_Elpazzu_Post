@@ -38,7 +38,8 @@ RSS_FEEDS = {
             "https://deepmind.com/blog/feed/basic/": "Groundbreaking research & innovations at the forefront of AI.",
             "https://www.unite.ai/feed/": "Articles, expert interviews & latest news on AI technologies.",
             "https://ai2people.com/feed/": "Explores human-centered aspects of AI.",
-            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media."
+            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media.",
+            "https://techcrunch.com/feed/": "Focus on technology news, startups, and VCs."
         },
         "description": "Artificial intelligence research and industry updates."
     },
@@ -59,10 +60,8 @@ RSS_FEEDS = {
             "http://feeds.bbci.co.uk/news/world/rss.xml": "Global headlines from BBC News.",
             "http://www.aljazeera.com/xml/rss/all.xml": "Global headlines from Al Jazeera.",
             "https://www.france24.com/en/rss": "Global headlines from France 24.",
-            "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml": "Global headlines from NY Times.",
             "https://www.ft.com/world?format=rss": "News, analysis, and comment from the Financial Times (business publication).",
-            "https://www.euronews.com/rss?format=mrss&level=theme&name=news": "Global headlines from Euronews.",
-            "https://www.euronews.com/rss?format=mrss&level=vertical&name=my-europe": "European headlines from Euronews."
+            "https://www.euronews.com/rss?format=mrss&level=theme&name=news": "Global headlines from Euronews."
         },
         "description": "Global news and international affairs."
     },
