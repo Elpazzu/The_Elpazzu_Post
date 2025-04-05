@@ -38,8 +38,7 @@ RSS_FEEDS = {
             "https://deepmind.com/blog/feed/basic/": "Groundbreaking research & innovations at the forefront of AI.",
             "https://www.unite.ai/feed/": "Articles, expert interviews & latest news on AI technologies.",
             "https://ai2people.com/feed/": "Explores human-centered aspects of AI.",
-            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media.",
-            "https://techcrunch.com/feed/": "Focus on technology news, startups, and VCs."
+            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media."
         },
         "description": "Artificial intelligence research and industry updates."
     },
@@ -51,7 +50,8 @@ RSS_FEEDS = {
             "https://www.investmentwatchblog.com/feed/": "Analysis & insights on financial markets, politics, and global events.",
             "https://www.ft.com/global-economy?format=rss": "Coverage of global economic issues.",
             "https://www.ft.com/companies?format=rss": "Latest company news and updates.",
-            "https://www.ft.com/markets?format=rss": "Latest market trends and updates."
+            "https://www.ft.com/markets?format=rss": "Latest market trends and updates.",
+            "https://techcrunch.com/feed/": "Focus on technology news, startups, and VCs."
         },
         "description": "Financial markets, investments, and economic news."
     },
@@ -79,7 +79,7 @@ def fetch_news(category: str, max_articles: int = 5):
         raise HTTPException(status_code=404, detail=f"Category '{category}' not found.")
     
     month_pattern = re.compile(r"^(January|February|March|April|May|June|July|August|September|October|November|December)\b", re.IGNORECASE)
-    ignore_pattern = re.compile(r"^(Latest news bulletin|Revue de presse du)|Interview Series$", re.IGNORECASE)
+    ignore_pattern = re.compile(r"^(Latest news bulletin|Revue de presse du|#FierceMadness)|Interview Series$", re.IGNORECASE)
     
     articles = []
     for url, feed_desc in RSS_FEEDS[category]["feeds"].items():
@@ -94,11 +94,11 @@ def fetch_news(category: str, max_articles: int = 5):
             link = entry.link
             domain = urlparse(link).netloc
 
-            if ignore_pattern.match(title):
+            if ignore_pattern.match(entry.title):
                 continue
             if category == "biopharma" and "/webinar/" in link:
                 continue
-            if "cafepharma.com" in url and not month_pattern.match(entry.title):
+            if "cafepharma.com" in url and month_pattern.match(entry.title):
                 continue
 
             summary = clean_summary(entry.summary) if hasattr(entry, "summary") else extract_summary(link)
