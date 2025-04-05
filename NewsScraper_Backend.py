@@ -45,11 +45,9 @@ RSS_FEEDS = {
     "investments": {
         "feeds": {
             "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114": "Latest financial market updates from CNBC.",
-            "https://www.biggerpockets.com/blog/feed": "Go-to resource for real estate investors.",
             "https://blogs.cfainstitute.org/investor/feed/": "Insightful & practical analysis for investment professionals.",
             "https://www.investmentwatchblog.com/feed/": "Analysis & insights on financial markets, politics, and global events.",
             "https://www.ft.com/global-economy?format=rss": "Coverage of global economic issues.",
-            "https://www.ft.com/companies?format=rss": "Latest company news and updates.",
             "https://www.ft.com/markets?format=rss": "Latest market trends and updates.",
             "https://techcrunch.com/feed/": "Focus on technology news, startups, and VCs."
         },
