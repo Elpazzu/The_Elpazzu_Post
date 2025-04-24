@@ -8,7 +8,8 @@ CATEGORIES = {
     "ai": f"https://the-elpazzu-post-backend.onrender.com/news/ai",
     "invest": f"https://the-elpazzu-post-backend.onrender.com/news/investments",
     "world": f"https://the-elpazzu-post-backend.onrender.com/news/world",
-    "lebanon": f"https://the-elpazzu-post-backend.onrender.com/news/lebanon"
+    "lebanon": f"https://the-elpazzu-post-backend.onrender.com/news/lebanon",
+    "belgium": "https://the-elpazzu-post-backend.onrender.com/news/belgium"
 }
 
 @app.get("/", response_class=HTMLResponse)
@@ -82,9 +83,17 @@ def serve_react():
             function loadMenu() {{
                 let menuBar = document.getElementById("menu-bar");
                 menuBar.innerHTML = "";
+                const emojiMap = {{
+                    pharma: "💊",
+                    ai: "🤖",
+                    invest: "📈",
+                    world: "🌍",
+                    lebanon: "🇱🇧",
+                    belgium: "🇧🇪"
+                }};
                 Object.keys(CATEGORIES).forEach(category => {{
                     let button = document.createElement("button");
-                    button.textContent = category.toUpperCase();
+                    button.textContent = emojiMap[category] || category;
                     button.onclick = () => loadNews(category);
                     menuBar.appendChild(button);
                 }});
