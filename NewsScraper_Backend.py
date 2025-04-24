@@ -65,10 +65,19 @@ RSS_FEEDS = {
     },
     "lebanon": {
         "feeds": {
-            "https://libnanews.com/feed/": "Political, economic, judicial, cultural & social news from Lebanon",
+            "https://libnanews.com/feed/": "Political, economic, judicial, cultural & social news from Lebanon.",
             "https://www.ft.com/world/mideast?format=rss": "FT news specific to MENA region."
         },
         "description": "News and updates from Lebanon."
+    },
+    "belgium": {
+        "feeds": {
+            "https://www.thebulletin.be/rss.xml": "News & lifestyle updates for internationals in Belgium.",
+            "https://brusselsmorning.com/feed/": "Politics, business & daily news from Brussels.",
+            "https://www.lalibre.be/arc/outboundfeeds/rss/?outputType=xml": "General news & opinions from La Libre Belgique.",
+            "https://www.lecho.be/rss/top_stories.xml": "Top financial & economic news from Belgium."
+        },
+        "description": "News and updates from Belgium."
     }
 }
 
