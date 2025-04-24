@@ -88,8 +88,8 @@ def serve_react():
                     ai: "🤖",
                     invest: "📈",
                     world: "🌍",
-                    lebanon: "\u{{1F1F1}}\u{{1F1E7}}",
-                    belgium: "🇧🇪"
+                    lebanon: "🌲",
+                    belgium: "🍟"
                 }};
                 Object.keys(CATEGORIES).forEach(category => {{
                     let button = document.createElement("button");
