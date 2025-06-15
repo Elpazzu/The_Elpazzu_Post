@@ -37,8 +37,9 @@ RSS_FEEDS = {
             "http://news.mit.edu/rss/topic/artificial-intelligence2": "MIT News Artificial Intelligence Blog.",
             "https://deepmind.com/blog/feed/basic/": "Groundbreaking research & innovations at the forefront of AI.",
             "https://www.unite.ai/feed/": "Articles, expert interviews & latest news on AI technologies.",
-            "https://ai2people.com/feed/": "Explores human-centered aspects of AI.",
-            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media."
+            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media.",
+            "https://www.softwaretestingmagazine.com/feed/": "News related to QA and testing.",
+            "https://blog.qasource.com/rss.xml": "News related to QA and testing."
         },
         "description": "Artificial intelligence research and industry updates."
     },
@@ -86,7 +87,7 @@ def fetch_news(category: str, max_articles: int = 5):
         raise HTTPException(status_code=404, detail=f"Category '{category}' not found.")
     
     month_pattern = re.compile(r"^(January|February|March|April|May|June|July|August|September|October|November|December)\b", re.IGNORECASE)
-    ignore_pattern = re.compile(r"^(Latest news bulletin|Revue de presse du|#FierceMadness)|Interview Series$", re.IGNORECASE)
+    ignore_pattern = re.compile(r"^(Latest news bulletin|Revue de presse du|#FierceMadness|Interview Series)$", re.IGNORECASE)
     
     articles = []
     for url, feed_desc in RSS_FEEDS[category]["feeds"].items():
