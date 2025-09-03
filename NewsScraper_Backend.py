@@ -23,7 +23,6 @@ RSS_FEEDS = {
     "biopharma": {
         "feeds": {
             "https://www.fiercepharma.com/rss/xml": "Breaking news and insights from the pharma industry.",
-            "https://www.cafepharma.com/rss.xml": "Industry gossip and insider news.",
             "https://www.pharmatimes.com/rss/news_rss.rss": "Industry trends, regulatory updates & patient perspectives.",
             "https://www.bioworld.com/rss/14": "Deals/M&As in Biotech & MedTech.",
             "https://www.bioworld.com/rss/5": "Artificial Intelligence in BioTech & MedTech."
@@ -37,9 +36,7 @@ RSS_FEEDS = {
             "http://news.mit.edu/rss/topic/artificial-intelligence2": "MIT News Artificial Intelligence Blog.",
             "https://deepmind.com/blog/feed/basic/": "Groundbreaking research & innovations at the forefront of AI.",
             "https://www.unite.ai/feed/": "Articles, expert interviews & latest news on AI technologies.",
-            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media.",
-            "https://www.softwaretestingmagazine.com/feed/": "News related to QA and testing.",
-            "https://blog.qasource.com/rss.xml": "News related to QA and testing."
+            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media."
         },
         "description": "Artificial intelligence research and industry updates."
     },
