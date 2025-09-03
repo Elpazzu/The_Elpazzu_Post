@@ -79,7 +79,7 @@ RSS_FEEDS = {
     }
 }
 
-def fetch_news(category: str, max_articles: int = 5):
+def fetch_news(category: str, max_articles: int = 8):
     if category not in RSS_FEEDS:
         raise HTTPException(status_code=404, detail=f"Category '{category}' not found.")
     
@@ -139,14 +139,11 @@ def clean_summary(summary):
     text = soup.get_text(separator=" ", strip=True)
     remove_patterns = [
         r"Les articles publiés par Libnanews, le média citoyen du Liban",
-        r"The post .*? on Executive Magazine",
         r"The post .*? appeared first on MarkTechPost",
         r"The post .*? appeared first on Unite.AI",
-        r"The post .*? appeared first on 961",
         r"Cet article .*? Citoyen du Liban",
         r"Landing Page Url .*? industry",
-        r"Continue reading .*",
-        r"Make it like cafepharma .*"
+        r"Continue reading .*"
     ]
     for pattern in remove_patterns:
         text = re.sub(pattern, "", text, flags=re.DOTALL)
@@ -157,6 +154,6 @@ def home():
     return {"message": "This The Elpazzu Post API. By using /news/{category} you can read news in json format, but these are meant to be read on a separate custom UI."}
 
 @app.get("/news/{category}")
-def get_news(category: str, max_articles: int = 5):
+def get_news(category: str, max_articles: int = 8):
     articles = fetch_news(category, max_articles)
     return {"category": category, "articles": articles}
