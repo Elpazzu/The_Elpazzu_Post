@@ -36,7 +36,8 @@ RSS_FEEDS = {
             "http://news.mit.edu/rss/topic/artificial-intelligence2": "MIT News Artificial Intelligence Blog.",
             "https://deepmind.com/blog/feed/basic/": "Groundbreaking research & innovations at the forefront of AI.",
             "https://www.unite.ai/feed/": "Articles, expert interviews & latest news on AI technologies.",
-            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media."
+            "https://www.ft.com/companies/technology?format=rss": "News for Hardware, software, networking, and Internet media.",
+            "https://www.wired.com/feed/rss": "Technology and culture magazine."
         },
         "description": "Artificial intelligence research and industry updates."
     },
@@ -57,7 +58,8 @@ RSS_FEEDS = {
             "http://www.aljazeera.com/xml/rss/all.xml": "Global headlines from Al Jazeera.",
             "https://www.france24.com/en/rss": "Global headlines from France 24.",
             "https://www.ft.com/world?format=rss": "News, analysis, and comment from the Financial Times (business publication).",
-            "https://www.euronews.com/rss?format=mrss&level=theme&name=news": "Global headlines from Euronews."
+            "https://www.euronews.com/rss?format=mrss&level=theme&name=news": "Global headlines from Euronews.",
+            "https://www.fastcompany.com/latest/rss?truncated=true": "Progressive business media brand."
         },
         "description": "Global news and international affairs."
     },
