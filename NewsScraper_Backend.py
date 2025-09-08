@@ -117,7 +117,7 @@ def fetch_news(category: str, max_articles: int = 8):
             articles.append({
                 "title": title,
                 "link": link,
-                "summary": summary[:1100] + "..." if len(summary) > 1100 else summary,
+                "summary": summary[:550] + "..." if len(summary) > 550 else summary,
                 "published": published,
                 "feed_description": feed_desc,
                 "domain": domain
