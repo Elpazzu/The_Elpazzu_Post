@@ -86,7 +86,7 @@ def fetch_news(category: str, max_articles: int = 8):
         raise HTTPException(status_code=404, detail=f"Category '{category}' not found.")
     
     month_pattern = re.compile(r"^(January|February|March|April|May|June|July|August|September|October|November|December)\b", re.IGNORECASE)
-    ignore_pattern = re.compile(r"^(Latest news bulletin|Revue de presse du|#FierceMadness|Interview Series)$", re.IGNORECASE)
+    ignore_pattern = re.compile(r"^(Latest news|Revue de presse du|#FierceMadness|Interview Series|2025)$", re.IGNORECASE)
     
     articles = []
     for url, feed_desc in RSS_FEEDS[category]["feeds"].items():
